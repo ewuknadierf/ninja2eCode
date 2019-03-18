@@ -10,12 +10,12 @@
 
 <body>
 	<script>
-	  var outerValue = "samurai";
+    // Global Scope
+    var outerValue = "samurai";
     var later;
 
     function outerFunction() {
       var innerValue = "ninja";
-//      var later;
 
       function innerFunction() {
         assert(outerValue === "samurai", "I can see the samurai.");
