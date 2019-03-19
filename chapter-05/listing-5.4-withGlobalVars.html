@@ -17,18 +17,30 @@
       background-color: blue;
       margin-bottom: 100px;
     }
+
+    #box2 {
+      width: 100px;
+      height: 100px;
+      position: relative;
+      margin: 5;
+      color: white;
+      font-weight: bolder;
+      background-color: blueviolet;
+      margin-bottom: 100px;
+    }
   </style>
 </head>
 
 <body>
   <div id="box1">First Box</div>
+  <div id="box2">Second Box</div>
   <script>
     function animateIt(elementId) {
-      var elem = document.getElementById(elementId);
-      var tick = 0;
       var timer = setInterval(function () {
         if (tick < 100) {
           elem.style.left = elem.style.top = tick + "px";
+//          elem2.style.left = elem2.style.top = tick + "px";
+          console.log("elem: " + elementId + " - tick: " + tick);
           tick++;
         }
         else {
@@ -42,7 +54,14 @@
         }
       }, 10);
     }
+
+    var elem = document.getElementById("box1");
+    var tick = 0;
     animateIt("box1");
+
+    var elem2 = document.getElementById("box2");
+    var tick = 0;
+    animateIt("box2");
   </script>
 </body>
 
